@@ -19,7 +19,7 @@ def youtube_to_mp3(youtube_url: str, output_path: str) -> None:
     except Exception as e:
         print(f"Error: {e}")
 
-@tool
+@tool(description="Download audio from a YouTube video and convert it to MP3 format. Takes a YouTube URL and optional output path.")
 def download_youtube_audio(youtube_url: str, output_path: str = ".") -> str:
     """
     Download audio from a YouTube video and convert it to MP3 format.

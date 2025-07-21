@@ -1,0 +1,1 @@
+BUCKET_NAME = "hofs-ugs-aws-agents-audio"

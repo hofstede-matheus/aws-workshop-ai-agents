@@ -117,3 +117,7 @@ sequenceDiagram
 
     C-->>YT: Process complete
 ```
+
+Links úteis:
+
+- [Agents as Tools](https://strandsagents.com/latest/documentation/docs/user-guide/concepts/multi-agent/agents-as-tools/)
