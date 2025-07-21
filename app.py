@@ -1,7 +1,6 @@
 from strands import Agent
 from strands.models.bedrock import BedrockModel
-from strands_tools import calculator
-
+from yt_dl_tool import download_youtube_audio
 print("Hello World")
 
 model = BedrockModel(
@@ -12,8 +11,8 @@ model = BedrockModel(
 agent = Agent(
     name="Calculator",
     description="A calculator agent that can perform basic arithmetic operations",
-    tools=[calculator],
+    tools=[download_youtube_audio],
     model=model,
 )
 
-agent("What is 10 + 10?")
+agent("Download the audio from this video: https://www.youtube.com/watch?v=W1zGjrH3BJI&ab_channel=TinyTechnicalTutorials")
