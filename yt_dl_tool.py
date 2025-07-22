@@ -32,7 +32,8 @@ def download_youtube_audio(youtube_url: str, output_path: str = ".") -> str:
         A message indicating the success or failure of the download
     """
     try:
+        print(f"Downloading audio from {youtube_url} to {output_path}")
         youtube_to_mp3(youtube_url, output_path)
-        return f"Successfully downloaded audio from {youtube_url} to {output_path}"
+        return f"Successfully downloaded audio from {youtube_url} to audio.mp3"
     except Exception as e:
         return f"Failed to download audio: {str(e)}"
