@@ -1,7 +1,7 @@
 from strands import Agent
 from strands.models.bedrock import BedrockModel
 from yt_dl_tool import download_youtube_audio
-from s3_tool import upload_to_s3
+from upload_to_s3 import upload_to_s3
 from constants import BUCKET_NAME
 import logging
 
