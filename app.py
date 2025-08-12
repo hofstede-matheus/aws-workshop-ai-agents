@@ -10,10 +10,10 @@ import logging
 # logging.getLogger("strands").setLevel(logging.DEBUG)
 
 # Sets the logging format and streams logs to stderr
-logging.basicConfig(
-    format="%(levelname)s | %(name)s | %(message)s",
-    handlers=[logging.StreamHandler()]
-)
+# logging.basicConfig(
+#     format="%(levelname)s | %(name)s | %(message)s",
+#     handlers=[logging.StreamHandler()]
+# )
 
 model = BedrockModel(
     region_name="eu-north-1",
@@ -27,4 +27,10 @@ coordinator_agent = Agent(
     model=model,
 )
 
-coordinator_agent("Download the audio from this video: https://www.youtube.com/watch?v=W1zGjrH3BJI&ab_channel=TinyTechnicalTutorials, upload it to S3 and then transcribe it to text, and then create a set of 5 questions aws certification-like questions based on the transcribed text")
+coordinator_agent(
+"""
+    Download the audio from this video: https://www.youtube.com/watch?v=W1zGjrH3BJI&ab_channel=TinyTechnicalTutorials, 
+    upload it to S3,
+    transcribe it to text, 
+    and then create a set of 5 questions aws certification-like questions based on the transcribed text
+""")
