@@ -42,78 +42,66 @@ pip install -r requirements.txt
 python app.py
 ```
 
-## Diagramas de fluxo
+## Diagramas
 
 ```mermaid
 architecture-beta
     group sources(cloud)[Sources]
     group agents(server)[Agents]
+    group tools(functions)[Tools]
     group storage(database)[Storage]
-    group lambda(functions)[Lambda and Tools]
+    group providers(cloud)[Model Provider]
 
     service youtube(internet)[YouTube video URL] in sources
 
     service coordinator(server)[Coordinator Agent] in agents
-    service transcription(server)[Transcription Agent] in agents
-    service question_generator(server)[Question Generation Agent] in agents
-    service validator(server)[Validator Agent] in agents
 
-    service audio_extractor(server)[Audio Extractor] in lambda
-    service questions_shuffler(server)[Questions Shuffler] in lambda
-    service s3_manager(server)[S3 Manager] in lambda
+    service yt_dl(functions)[YouTube Downloader Tool] in tools
+    service s3_uploader(functions)[S3 Upload Tool] in tools
+    service transcriber(functions)[Transcribe Tool] in tools
+    service aws_context(functions)[AWS Context Tool] in tools
 
-    service extracted_audio_bucket(disk)[Extracted Audio Bucket] in storage
-    service transcription_results_bucket(disk)[Transcription Results Bucket] in storage
+    service s3_bucket(disk)[S3 Bucket] in storage
+
+    service bedrock(cloud)[Amazon Bedrock Model] in providers
 
     youtube:R --> L:coordinator
-    coordinator:R --> L:audio_extractor
-    audio_extractor:R --> L:s3_manager
-    s3_manager:R --> L:extracted_audio_bucket
-    coordinator:R --> L:transcription
-    transcription:R --> L:s3_manager
-    s3_manager:R --> L:transcription_results_bucket
-    coordinator:R --> L:question_generator
-    coordinator:R --> L:questions_shuffler
-    coordinator:R --> L:validator
+    coordinator:R --> L:yt_dl
+    yt_dl:R --> L:s3_uploader
+    s3_uploader:R --> L:s3_bucket
+    coordinator:R --> L:transcriber
+    transcriber:R --> L:s3_bucket
+    coordinator:R --> L:aws_context
+    coordinator:R --> L:bedrock
 ```
 
 ```mermaid
 sequenceDiagram
     participant YT as YouTube
     participant C as Coordinator Agent
-    participant AE as Audio Extractor
-    participant SM as S3 Manager
-    participant EAB as Extracted Audio Bucket
-    participant T as Transcription Agent
-    participant TRB as Transcription Results Bucket
-    participant QG as Question Generation Agent
-    participant QS as Questions Shuffler
-    participant V as Validator Agent
+    participant YDL as YouTube Downloader Tool
+    participant S3U as S3 Upload Tool
+    participant S3 as S3 Bucket
+    participant TR as Transcribe Tool
+    participant BR as Bedrock Model
 
     YT->>C: YouTube video URL
 
-    C->>AE: Extract audio
-    AE->>SM: Store audio file
-    SM->>EAB: Save extracted audio
-    EAB-->>SM: Storage confirmation
-    SM-->>AE: Storage success
-    AE-->>C: Audio extraction complete
+    C->>YDL: Download audio
+    YDL-->>C: audio.mp3 saved locally
 
-    C->>T: Transcribe audio
-    T->>SM: Store transcription
-    SM->>TRB: Save transcription results
-    TRB-->>SM: Storage confirmation
-    SM-->>T: Storage success
-    T-->>C: Transcription complete
+    C->>S3U: Upload audio.mp3
+    S3U->>S3: PutObject audio.mp3
+    S3-->>S3U: Storage confirmation
+    S3U-->>C: S3 URI
 
-    C->>QG: Generate questions
-    QG-->>C: Questions generated
+    C->>TR: Transcribe s3://.../audio.mp3
+    TR->>S3: Save transcription
+    S3-->>TR: Storage confirmation
+    TR-->>C: Transcript ready (S3 URI)
 
-    C->>QS: Shuffle questions
-    QS-->>C: Questions shuffled
-
-    C->>V: Validate questions
-    V-->>C: Validation complete
+    C->>BR: Generate exam-style questions
+    BR-->>C: Questions generated
 
     C-->>YT: Process complete
 ```
