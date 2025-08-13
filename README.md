@@ -59,7 +59,6 @@ architecture-beta
     service yt_dl(functions)[YouTube Downloader Tool] in tools
     service s3_uploader(functions)[S3 Upload Tool] in tools
     service transcriber(functions)[Transcribe Tool] in tools
-    service aws_context(functions)[AWS Context Tool] in tools
 
     service s3_bucket(disk)[S3 Bucket] in storage
 
@@ -71,7 +70,6 @@ architecture-beta
     s3_uploader:R --> L:s3_bucket
     coordinator:R --> L:transcriber
     transcriber:R --> L:s3_bucket
-    coordinator:R --> L:aws_context
     coordinator:R --> L:bedrock
 ```
 
