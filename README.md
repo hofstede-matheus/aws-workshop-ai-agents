@@ -1,6 +1,35 @@
 # aws-workshop-ai-agents
 
-## Configurar AWS
+## Como vai ser o workshop
+
+- Vou falar sobre agentes e como eles funcionam com AWS Strands e algums patterns
+- Vamos entender algumas configurações para fazer tudo funcionar
+- Vamos passar pelo código e entender como tudo funciona
+
+A ideia não é fazer muito live coding, para respeitar o tempo de vocês. Vai estar tudo gravado, então não precisa tentar reproduzir o que eu fiz.
+
+## AWS Strands
+
+## Configurando Permissões no IAM
+
+### Antes de tudo, alguns conceitos
+
+- Policies (Políticas) são documentos JSON que definem as permissões.
+- Roles (Funções) identidades temporárias de usuários, serviços da AWS ou outras entidades
+- Users (Usuários) são identidades permanentes que representam usuários ou aplicações que precisam acessar recursos da AWS.
+
+Uma boa prática é usar o conceito de least privilege, ou seja, dar acesso mínimo necessário para que o usuário possa fazer o que precisa.
+
+(falar de quais permissões são necessárias para fazer o que vamos fazer)
+
+(falar sobre a especificidade do transcribe de ter que ter um role com acesso ao bucket)
+(então vamos o agente vai passar um role para o transcribe, e logo ele precisa de permissões para isso)
+
+### Criando policies
+
+### Criando roles
+
+### Criando usuários e access keys
 
 - Crie uma policy com essas permissões:
 
