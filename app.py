@@ -32,5 +32,7 @@ coordinator_agent(
     Download the audio from this video: https://www.youtube.com/watch?v=W1zGjrH3BJI&ab_channel=TinyTechnicalTutorials, 
     upload it to S3,
     transcribe it to text, 
-    and then create a set of 5 questions aws certification-like questions based on the transcribed text
+    and then create a set of 5 questions aws certification-like questions based on the transcribed text.
+    Show the answers to the questions at the end of the output.
+    Just output the questions and answers, no other text.
 """)
