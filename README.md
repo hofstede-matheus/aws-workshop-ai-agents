@@ -83,6 +83,10 @@ Mas vamos focar no Agents as Tools.
 - Orchestrator Agent: Recebe o prompt e decide quais agentes usar para chegar no resultado.
 - Tools specializados: Fazer tarefas específicas e são chamados pelo orchestrator.
 
+Eu pessoalmente acho mais organizado porque é assim que se faz código.
+
+https://strandsagents.com/latest/documentation/docs/user-guide/concepts/multi-agent/agents-as-tools/
+
 ---
 
 ## Configurando o AWS Strands
@@ -215,3 +219,5 @@ sequenceDiagram
 Links úteis:
 
 - [Agents as Tools](https://strandsagents.com/latest/documentation/docs/user-guide/concepts/multi-agent/agents-as-tools/)
+- [Strands Agents](https://strandsagents.com/latest/)
+- [Introducing Strands Agents](https://aws.amazon.com/blogs/opensource/introducing-strands-agents-an-open-source-ai-agents-sdk/)
