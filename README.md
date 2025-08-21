@@ -1,14 +1,93 @@
+---
+marp: true
+title: "AWS Strands Workshop"
+description: "Workshop sobre AWS Strands"
+date: 2025-08-21
+---
+
 # aws-workshop-ai-agents
 
-## Como vai ser o workshop
+---
+
+## Intro
+
+### Eu
+
+- Matheus Hofstede, aka "Hofs".
+- Senior Software Engineer @ Didomi
+- Morando em Malta a pouco tempo mais de 1 ano.
+- AWS Community Builder
+- Buscando a certificação AWS Associate – Solutions Architect
+
+---
+
+### O Plano
 
 - Vou falar sobre agentes e como eles funcionam com AWS Strands e algums patterns
 - Vamos entender algumas configurações para fazer tudo funcionar
 - Vamos passar pelo código e entender como tudo funciona
+- Conversar sobre a maturidade do AWS Strands
 
-A ideia não é fazer muito live coding, para respeitar o tempo de vocês. Vai estar tudo gravado, então não precisa tentar reproduzir o que eu fiz.
+---
+
+### Combinados
+
+- A ideia não é fazer live coding, pra respeitar o tempo de vocês.
+- Vai estar tudo gravado, então não precisa tentar reproduzir o que eu fiz.
+- Literalmente esse código vai estar no github.
+
+---
 
 ## AWS Strands
+
+- SDK open source para criar agentes de IA.
+- "Model-Driven" - Interação com LLMs e como eles interagem com serviços externos.
+
+https://strandsagents.com/latest/
+
+---
+
+## Agentes?
+
+Agentes = Prompt + Model + Tools
+
+### Prompt
+
+Instruções em linguagem natural a serem seguidas.
+
+### Model
+
+LLM, mas com possibilidade de chamar tools
+
+### Tools
+
+Funções que o agente pode usar para interagir, como ter acesso a internet, acesso a banco de dados, terminal ou disco.
+
+---
+
+## Patterns
+
+### Tipos de patterns
+
+- Agents as Tools
+- Swarm
+- Graph
+- Workflow
+
+Mas vamos focar no Agents as Tools.
+
+---
+
+### Agents as Tools
+
+- Orchestrator Agent: Recebe o prompt e decide quais agentes usar para chegar no resultado.
+- Tools specializados: Fazer tarefas específicas e são chamados pelo orchestrator.
+
+---
+
+## Configurando o AWS Strands
+
+---
 
 ## Configurando Permissões no IAM
 
