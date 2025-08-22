@@ -11,7 +11,7 @@ date: 2025-08-21
 
 ## Intro
 
-### Eu
+### Eu 🤓
 
 - Matheus Hofstede, aka "Hofs".
 - Senior Software Engineer @ Didomi
