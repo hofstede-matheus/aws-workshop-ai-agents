@@ -6,10 +6,10 @@ from upload_to_s3_tool import upload_to_s3
 from strands_tools import use_aws
 import logging
 
-# Enables Strands debug log level
+# ## Enables Strands debug log level
 # logging.getLogger("strands").setLevel(logging.DEBUG)
 
-# Sets the logging format and streams logs to stderr
+# ## Sets the logging format and streams logs to stderr
 # logging.basicConfig(
 #     format="%(levelname)s | %(name)s | %(message)s",
 #     handlers=[logging.StreamHandler()]
