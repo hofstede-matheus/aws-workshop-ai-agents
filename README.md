@@ -95,6 +95,8 @@ https://strandsagents.com/latest/documentation/docs/user-guide/concepts/multi-ag
 
 ## Configurando Permissões no IAM
 
+IAM = Identity and Access Management
+
 ### Antes de tudo, alguns conceitos
 
 - Policies (Políticas) são documentos JSON que definem as permissões.
