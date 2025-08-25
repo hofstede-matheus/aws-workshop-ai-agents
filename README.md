@@ -65,6 +65,16 @@ Funções que o agente pode usar para interagir, como ter acesso a internet, ace
 
 ---
 
+🍓🍓🍓
+
+- O novo teste de Touring é pedir pra IA contar quantos "r" tem na palavra "strawberry"
+- Uma LLM é um sistema de predição de texto.
+- Não enxergam palavras, mas sim tokens.
+- Uma IA é péssima em matemática, mas excelente em fazer código.
+- Logo, LLMs com Reasoning e acesso a tools geram código pra resolver o problema (contar quantos "r" tem na palavra "strawberry"), executa e retorna o resultado.
+
+---
+
 ## Patterns
 
 ### Tipos de patterns
@@ -273,15 +283,62 @@ export AWS_SECRET_ACCESS_KEY=your_secret_key
 
 ---
 
+### Inicializando o ambiente
+
 ```
 python -m venv venv
 source venv/bin/activate
 
 pip install -r requirements.txt
+```
+
+---
+
+### app.py (coordinator_agent)
+
+---
+
+### yt_dl_tool.py
+
+---
+
+### upload_to_s3_tool.py
+
+---
+
+### transcribe_tool.py
+
+---
+
+### use_aws_tool.py
+
+---
+
+### Executando
+
+```
 python app.py
 ```
 
+---
+
+## Desafio
+
+- Hoje eu mostrei como chegar no resultado integrando com serviços da AWS
+- Desafio fazer tudo localmente, sem usar a AWS:
+  - Usando algum modelo local disponível através do ollama
+  - `whisper-large-v3-turbo` ou API da OpenAI para transcrição
+  - Tools `file_read` e `file_write` para I/O
+
+https://huggingface.co/openai/whisper-large-v3-turbo
+https://platform.openai.com/docs/guides/speech-to-text
+https://ollama.com/search
+
+---
+
 ## Diagramas
+
+### Diagrama de fluxo
 
 ```mermaid
 flowchart TD
@@ -320,6 +377,10 @@ flowchart TD
     use_aws_tool --> s3
 ```
 
+---
+
+### Diagrama de sequência
+
 ```mermaid
 sequenceDiagram
     participant C as Coordinator Agent
@@ -351,6 +412,8 @@ sequenceDiagram
     C->>BR: Generate exam-style questions
     BR-->>C: Questions generated
 ```
+
+---
 
 Links úteis:
 
