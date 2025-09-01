@@ -22,7 +22,7 @@ model = BedrockModel(
 
 coordinator_agent = Agent(
     name="Coordinator Agent",
-    description="A agent that can generate AWS certification-like questions from a YouTube video",
+    description="An agent that generates AWS certification-style questions from a YouTube video.",
     tools=[download_youtube_audio, upload_to_s3, transcribe, use_aws],
     model=model,
 )
@@ -30,9 +30,8 @@ coordinator_agent = Agent(
 coordinator_agent(
 """
     Download the audio from this video: https://www.youtube.com/watch?v=W1zGjrH3BJI&ab_channel=TinyTechnicalTutorials, 
-    upload it to S3,
-    transcribe it to text, 
-    and then create a set of 5 questions aws certification-like questions based on the transcribed text.
-    Show the answers to the questions at the end of the output.
-    Just output the questions and answers, no other text.
+    upload it to S3, 
+    transcribe it, 
+    and create five AWS certification-style questions based on the transcription. 
+    Present the answers at the end and include only the questions and answers in the output.
 """)

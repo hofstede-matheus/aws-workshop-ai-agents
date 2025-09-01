@@ -122,7 +122,7 @@ Uma boa prática é usar o conceito de least privilege, ou seja, dar acesso mín
 
 ---
 
-![Sequence Diagram](assets/sequence_diagram.png)
+![Sequence Diagram](assets/sequence_diagram_mermaid.png)
 
 ---
 
@@ -133,7 +133,7 @@ Uma boa prática é usar o conceito de least privilege, ou seja, dar acesso mín
 
 ---
 
-- Em quase todos os casos, o agente precisa de permissões para acessar o S3.
+- Em quase todos os casos, as tools precisam de permissões para acessar o S3.
 - Mas no caso do transcribe, o agente só cria um job e espera o resultado. Logo, é o transcribe que precisa de permissões para acessar o S3 através de um role "passado".
 
 [Documentação do Transcribe (Data input and output)](https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-output)
@@ -330,6 +330,10 @@ python app.py
   - `whisper-large-v3-turbo` ou API da OpenAI para transcrição
   - Tools `file_read` e `file_write` para I/O
 
+---
+
+https://strandsagents.com/latest/documentation/docs/user-guide/concepts/model-providers/ollama/?h=ollama
+https://strandsagents.com/latest/documentation/docs/user-guide/concepts/model-providers/openai/
 https://huggingface.co/openai/whisper-large-v3-turbo
 https://platform.openai.com/docs/guides/speech-to-text
 https://ollama.com/search
@@ -420,3 +424,10 @@ Links úteis:
 - [Agents as Tools](https://strandsagents.com/latest/documentation/docs/user-guide/concepts/multi-agent/agents-as-tools/)
 - [Strands Agents](https://strandsagents.com/latest/)
 - [Introducing Strands Agents](https://aws.amazon.com/blogs/opensource/introducing-strands-agents-an-open-source-ai-agents-sdk/)
+
+---
+
+Ferramentas que usei:
+
+- [Marp](https://marp.app/#get-started)
+- [Mermaid](https://mermaid.js.org/)
