@@ -26,7 +26,7 @@ date: 2025-08-21
 - Vou falar sobre agentes, como eles funcionam com AWS Strands e alguns patterns
 - Vamos entender algumas configurações para fazer tudo funcionar
 - Vamos passar pelo código e entender como tudo funciona
-- Conversar sobre a maturidade do AWS Strands
+- Lançar um desafio
 
 ---
 
