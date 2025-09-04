@@ -13,9 +13,9 @@ date: 2025-08-21
 
 ### Eu
 
-- Matheus Hofstede, aka "Hofs".
+- Matheus Hofstede, a.k.a. "Hofs"
 - Senior Software Engineer @ Didomi
-- Morando em Malta a pouco tempo mais de 1 ano.
+- Morando em Malta há pouco mais de 1 ano
 - AWS Community Builder
 - Buscando a certificação AWS Associate – Solutions Architect
 
@@ -23,7 +23,7 @@ date: 2025-08-21
 
 ### O Plano
 
-- Vou falar sobre agentes e como eles funcionam com AWS Strands e algums patterns
+- Vou falar sobre agentes, como eles funcionam com AWS Strands e alguns patterns
 - Vamos entender algumas configurações para fazer tudo funcionar
 - Vamos passar pelo código e entender como tudo funciona
 - Conversar sobre a maturidade do AWS Strands
@@ -32,9 +32,9 @@ date: 2025-08-21
 
 ### Combinados
 
-- A ideia não é fazer live coding, pra respeitar o tempo de vocês.
+- A ideia não é fazer live coding para respeitar o tempo de vocês.
 - Vai estar tudo gravado, então não precisa tentar reproduzir o que eu fiz.
-- Literalmente esse código vai estar no github.
+- Esse código vai estar no GitHub.
 
 ---
 
@@ -67,11 +67,11 @@ Funções que o agente pode usar para interagir, como ter acesso a internet, ace
 
 🍓🍓🍓
 
-- O novo teste de Touring é pedir pra IA contar quantos "r" tem na palavra "strawberry"
+- O novo teste de Touring é pedir para a IA contar quantos "r" tem na palavra "strawberry".
 - Uma LLM é um sistema de predição de texto.
 - Não enxergam palavras, mas sim tokens.
 - Uma IA é péssima em matemática, mas excelente em fazer código.
-- Logo, LLMs com Reasoning e acesso a tools geram código pra resolver o problema (contar quantos "r" tem na palavra "strawberry"), executa e retorna o resultado.
+- Logo, LLMs com reasoning e acesso a tools geram código para resolver o problema (contar quantos "r" tem na palavra "strawberry"), executam e retornam o resultado.
 
 ---
 
