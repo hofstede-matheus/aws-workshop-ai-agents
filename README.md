@@ -67,11 +67,11 @@ Funções que o agente pode usar para interagir, como ter acesso a internet, ace
 
 🍓🍓🍓
 
-- O novo teste de Touring é pedir pra IA contar quantos "r" tem na palavra "strawberry"
+- O novo teste de Touring é pedir para a IA contar quantos "r" tem na palavra "strawberry".
 - Uma LLM é um sistema de predição de texto.
 - Não enxergam palavras, mas sim tokens.
 - Uma IA é péssima em matemática, mas excelente em fazer código.
-- Logo, LLMs com Reasoning e acesso a tools geram código pra resolver o problema (contar quantos "r" tem na palavra "strawberry"), executa e retorna o resultado.
+- Logo, LLMs com reasoning e acesso a tools geram código para resolver o problema (contar quantos "r" tem na palavra "strawberry"), executam e retornam o resultado.
 
 ---
 
